@@ -9,10 +9,10 @@ Tell it what you want in plain English. It reads files, writes code, and runs co
 ![OpenAI](https://img.shields.io/badge/OpenAI-API-412991?logo=openai&logoColor=white)
 ![uv](https://img.shields.io/badge/managed%20with-uv-DE5FE9)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)
-![License](https://img.shields.io/badge/license-MIT-green)
 
-<!-- Replace with your real demo GIF (see "Record a demo" notes) -->
-<img src="assets/demo.gif" alt="Demo of the agent building a Tic Tac Toe game in the terminal" width="800">
+<img src="assets/demo.gif" alt="Animated example of the agent building a Tic Tac Toe game in the terminal" width="800">
+
+<sub>Illustrative example session. Output is simulated.</sub>
 
 </div>
 
@@ -61,19 +61,27 @@ That repeat-until-done cycle is called an **agent loop**, and it is the core ide
 
 ## 🎬 See it in action
 
-> Replace these placeholders with your own screenshots or GIFs. Save images in an `assets/` folder.
+> The images below are **illustrative examples** of what a session looks like. They are not live recordings.
 
-### Building Tic Tac Toe
+### Example 1: Tic Tac Toe in the terminal
 
-<img src="assets/tictactoe-prompt.png" alt="Typing a request to build Tic Tac Toe" width="700">
+**Ask for it.** Type a request in plain English. The agent writes the file, then asks permission before running it:
 
-The agent writes the code, installs what it needs, and runs the game:
+<img src="assets/tictactoe-prompt.png" alt="Typing a request to build Tic Tac Toe, with the agent asking permission to run it" width="700">
 
-<img src="assets/tictactoe-game.png" alt="The finished Tic Tac Toe game" width="400">
+**Play it.** After you approve, the game runs right in your terminal:
 
-### Building Pac-Man
+<img src="assets/tictactoe-game.png" alt="A finished Tic Tac Toe game running in the terminal" width="400">
 
-<img src="assets/pacman-game.png" alt="The finished Pac-Man game" width="400">
+### Example 2: Pac-Man style game with pygame
+
+**Ask for it.**
+
+<img src="assets/pacman-prompt.png" alt="Typing a request to build a Pac-Man style game" width="700">
+
+**Play it.** This one opens a graphical window using [pygame](https://pyga.me/):
+
+<img src="assets/pacman-game.png" alt="A Pac-Man style game running in a pygame window" width="500">
 
 ---
 
@@ -124,11 +132,15 @@ git clone https://github.com/theprotoscore/agentic-coding-assistant.git
 cd agentic-coding-assistant
 ```
 
+<img src="assets/step1-clone.png" alt="Cloning the repository in a terminal" width="700">
+
 ### 2. Install dependencies
 
 ```bash
 uv sync
 ```
+
+<img src="assets/step2-install.png" alt="Installing dependencies with uv sync" width="700">
 
 ### 3. Add your API key
 
@@ -140,19 +152,15 @@ OPENAI_API_KEY=your-key-here
 
 > 💡 A template is provided as `.env.example`. You can copy it: `copy .env.example .env` (Windows) or `cp .env.example .env` (macOS/Linux).
 
+<img src="assets/step3-env.png" alt="Copying the env template and adding an API key" width="700">
+
 ### 4. Run the agent
 
 ```bash
 uv run python agent.py
 ```
 
-You should see:
-
-```text
-Mini agent ready. Type 'exit' to quit.
-
-You:
-```
+<img src="assets/step4-run.png" alt="The agent starting up and waiting for input" width="700">
 
 ---
 
@@ -186,7 +194,11 @@ agentic-coding-assistant/
 ├── pyproject.toml      # Project metadata and dependencies (managed by uv)
 ├── .env.example        # Template showing which secrets are needed (no real values)
 ├── .gitignore          # Keeps secrets and junk out of git
-├── assets/             # Screenshots and demo GIFs for this README
+├── assets/             # Images and the demo GIF used in this README
+│   ├── demo.gif
+│   ├── step1-clone.png ... step4-run.png
+│   ├── tictactoe-prompt.png, tictactoe-game.png
+│   └── pacman-prompt.png, pacman-game.png
 └── README.md           # You are here
 ```
 
@@ -233,7 +245,7 @@ Built while following Nick Saraev's _AI Agents Full Course 2026_ on YouTube. Tha
 
 <div align="center">
 
-**Built by [Franklin](https://github.com/theprotoscore)** · [Portfolio](https://franklinstack.com)
+**Built by [Franklin](https://github.com/theprotoscore)**
 
 If this helped you learn something, consider leaving a ⭐
 
