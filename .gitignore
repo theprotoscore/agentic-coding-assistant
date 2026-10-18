@@ -1,0 +1,10 @@
+@"
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+project_dump.txt
+note*.md
+"@ | Out-File .gitignore -Encoding utf8
